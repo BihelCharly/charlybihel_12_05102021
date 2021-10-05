@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/charlybihel_12_05102021/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/charlybihel_12_05102021/static/js/main.a2711650.chunk.js",
+    "main.js.map": "/charlybihel_12_05102021/static/js/main.a2711650.chunk.js.map",
+    "runtime-main.js": "/charlybihel_12_05102021/static/js/runtime-main.5a8ae0af.js",
+    "runtime-main.js.map": "/charlybihel_12_05102021/static/js/runtime-main.5a8ae0af.js.map",
+    "static/js/2.7cd13619.chunk.js": "/charlybihel_12_05102021/static/js/2.7cd13619.chunk.js",
+    "static/js/2.7cd13619.chunk.js.map": "/charlybihel_12_05102021/static/js/2.7cd13619.chunk.js.map",
+    "static/js/3.972984f6.chunk.js": "/charlybihel_12_05102021/static/js/3.972984f6.chunk.js",
+    "static/js/3.972984f6.chunk.js.map": "/charlybihel_12_05102021/static/js/3.972984f6.chunk.js.map",
+    "index.html": "/charlybihel_12_05102021/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/charlybihel_12_05102021/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.7cd13619.chunk.js.LICENSE.txt": "/charlybihel_12_05102021/static/js/2.7cd13619.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/charlybihel_12_05102021/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5a8ae0af.js",
+    "static/js/2.7cd13619.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.a2711650.chunk.js"
+  ]
+}
