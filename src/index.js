@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { HashRouter, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Home";
-import Footer from "./components/Footer";
+import Error404 from "./pages/404";
 import reportWebVitals from './reportWebVitals';
 import "./index.scss";
 
@@ -12,8 +12,9 @@ const Root = () =>(
 		<Header />
       <Switch>
         <Route exact={true} path="/" component={Home} />
+        <Route path="*" component={Error404} />
+				<Route component={Error404} />
       </Switch>
-		<Footer />
 	</HashRouter>
 );
 

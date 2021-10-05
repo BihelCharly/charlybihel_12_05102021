@@ -3,8 +3,9 @@ import '../styles/Home.scss';
 
 function Home() {
   return (
-    <div>
-      <p>Test</p>
+    <div className="welcome-block">
+      <p className="welcome-user">Bonjour <span className="user--name">Thomas</span></p>
+      <p className="welcome-goals">Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
     </div>
   );
 }
