@@ -1,12 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { HashRouter, Switch, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Home from "./pages/Home";
+import Footer from "./components/Footer";
 import reportWebVitals from './reportWebVitals';
+import "./index.scss";
+
+const Root = () =>(
+	<HashRouter basename="/">
+		<Header />
+      <Switch>
+        <Route exact={true} path="/" component={Home} />
+      </Switch>
+		<Footer />
+	</HashRouter>
+);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Root />
   </React.StrictMode>,
   document.getElementById('root')
 );
