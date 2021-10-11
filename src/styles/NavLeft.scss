@@ -1,0 +1,33 @@
+.nav-left {
+  position: absolute;
+  background-color: black;
+  width: 117px;
+  height: 100%;
+  z-index: 2;
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 75%;
+    gap: 30px;
+  }
+  .nav-logo {
+    cursor: pointer;
+  }
+  .copiryght {
+    height: 25%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: rotate(-90deg);
+  }
+  .copiryght > p {
+    color: white;
+    font-size: 12px;
+    vertical-align: top;
+  }
+}

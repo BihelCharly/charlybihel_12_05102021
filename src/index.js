@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { HashRouter, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
+import NavLeft from "./components/NavLeft";
 import Home from "./pages/Home";
 import Error404 from "./pages/404";
 import reportWebVitals from "./reportWebVitals";
@@ -10,6 +11,7 @@ import "./index.scss";
 const Root = () => (
   <HashRouter basename="/">
     <Header />
+    <NavLeft />
     <Switch>
       <Route exact={true} path="/" component={Home} />
       <Route path="*" component={Error404} />

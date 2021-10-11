@@ -6,66 +6,40 @@ import {
   PolarAngleAxis,
   PolarRadiusAxis,
 } from "recharts";
+import Data from "../data/data";
 import "../styles/SimpleRadarChart.scss";
 
-const data = [
-  {
-    subject: "Math",
-    A: 120,
-    B: 110,
-    fullMark: 150,
-  },
-  {
-    subject: "Chinese",
-    A: 98,
-    B: 130,
-    fullMark: 150,
-  },
-  {
-    subject: "English",
-    A: 86,
-    B: 130,
-    fullMark: 150,
-  },
-  {
-    subject: "Geography",
-    A: 99,
-    B: 100,
-    fullMark: 150,
-  },
-  {
-    subject: "Physics",
-    A: 85,
-    B: 90,
-    fullMark: 150,
-  },
-  {
-    subject: "History",
-    A: 65,
-    B: 85,
-    fullMark: 150,
-  },
-];
-
 export default function SimpleRadarChart() {
+  let newDataArray = [];
+  let performances = Data.USER_PERFORMANCE[0].data;
+  let kind = Data.USER_PERFORMANCE[0].kind;
+  performances.forEach((element, index) => {
+    let activities = Object.values(kind);
+    const newObject = {
+      activity: activities[index++],
+      kind: element.value,
+      fullMark: 150,
+    };
+    newDataArray.push(newObject);
+  });
+
   return (
     <RadarChart
       className="sessions-performances"
-      outerRadius={80}
+      outerRadius={85}
       width={260}
-      height={260}
-      data={data}
+      height={270}
+      data={newDataArray}
     >
-      <PolarGrid />
-      <PolarAngleAxis dataKey="subject" stroke="white" />
-      <PolarRadiusAxis />
-      <Radar
-        name="Mike"
-        dataKey="A"
-        stroke="red"
-        fill="red"
-        fillOpacity={0.6}
+      <PolarGrid stroke="white" radialLines={false} />
+      <PolarAngleAxis
+        dataKey="activity"
+        stroke="white"
+        fontSize="10"
+        tickLine={false}
       />
+      <PolarRadiusAxis tick={false} axisLine={false} />
+      <Radar dataKey="kind" stroke="red" fill="red" fillOpacity={0.65} />
     </RadarChart>
   );
 }

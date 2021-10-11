@@ -1,5 +1,12 @@
 import * as React from "react";
-import { LineChart, Line, Legend, XAxis } from "recharts";
+import {
+  LineChart,
+  Line,
+  Legend,
+  XAxis,
+  Tooltip,
+  ReferenceLine,
+} from "recharts";
 import Data from "../data/data";
 import "../styles/TinyLineChart.scss";
 
@@ -16,7 +23,12 @@ export default function TinyLineChart() {
     };
     newDataArray.push(newObject);
   });
-  console.log(newDataArray);
+
+  const newLegend = () => {
+    const color = "white";
+    const opacity = "70%";
+    return <span style={{ color, opacity }}>Durée moyenne des sessions</span>;
+  };
 
   return (
     <LineChart
@@ -26,21 +38,33 @@ export default function TinyLineChart() {
       data={newDataArray}
     >
       <Legend
-        width={260}
-        wrapperStyle={{
-          top: -20,
-          right: 0,
-          backgroundColor: "white",
-          borderRadius: 3,
-          lineHeight: "5px",
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "right",
-        }}
+        width={200}
+        align="left"
+        verticalAlign="top"
+        iconSize="0"
+        margin="0"
+        formatter={newLegend}
       />
-      <XAxis dataKey="name" />
+      <XAxis dataKey="name" stroke="white" tickSize="0" tickMargin="15" />
+      <ReferenceLine y={0} stroke="red" />
+      <Tooltip
+        cursor={{ stroke: "red", strokeWidth: 0 }}
+        contentStyle={{
+          backgroundColor: "white",
+          borderColor: "white",
+          color: "black",
+          width: 30,
+          height: 20,
+          display: "flex",
+          flexDirection: "column",
+          flexWrap: "wrap",
+          fontSize: 8,
+        }}
+        itemStyle={{ color: "black" }}
+        labelStyle={{ display: "none" }}
+      />
       <Line
-        type="basis"
+        type="monotone"
         dataKey="sessionLength"
         stroke="white"
         dot={false}

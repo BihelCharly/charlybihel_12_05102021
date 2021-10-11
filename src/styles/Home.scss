@@ -1,13 +1,46 @@
+.dashboard {
+  margin-left: 15%;
+}
+
 .welcome-block {
-    .welcome-user{
-        font-weight: 500;
-        font-size: 48px;
-        .user--name {
-            color: #E60000;
-        }
+  .welcome-user {
+    font-weight: 700;
+    font-size: 48px;
+    .user--name {
+      color: #e60000;
     }
-    .welcome-goals{
-        font-weight: normal;
-        font-size: 18px;
-    }
+  }
+  .welcome-goals {
+    font-weight: normal;
+    font-size: 18px;
+  }
+}
+
+.charts-block {
+  display: grid;
+  .recharts-wrapper:nth-child(1) {
+    grid-column: 1/8;
+    grid-row: 1;
+    background-color: #fbfbfb;
+  }
+  .recharts-wrapper:nth-child(2) {
+    margin-top: 25px;
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .recharts-wrapper:nth-child(3) {
+    margin-top: 25px;
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .recharts-wrapper:nth-child(4) {
+    margin-top: 25px;
+    grid-column: 3;
+    grid-row: 2;
+    background-color: #fbfbfb;
+  }
+  .nutrition-block {
+    grid-column: 6/8;
+    grid-row: 1/2;
+  }
 }
