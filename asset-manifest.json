@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/charlybihel_12_05102021/static/css/main.c7f73864.chunk.css",
-    "main.js": "/charlybihel_12_05102021/static/js/main.d99b0a98.chunk.js",
-    "main.js.map": "/charlybihel_12_05102021/static/js/main.d99b0a98.chunk.js.map",
-    "runtime-main.js": "/charlybihel_12_05102021/static/js/runtime-main.2dd6f230.js",
-    "runtime-main.js.map": "/charlybihel_12_05102021/static/js/runtime-main.2dd6f230.js.map",
-    "static/js/2.7c20b9f0.chunk.js": "/charlybihel_12_05102021/static/js/2.7c20b9f0.chunk.js",
-    "static/js/2.7c20b9f0.chunk.js.map": "/charlybihel_12_05102021/static/js/2.7c20b9f0.chunk.js.map",
-    "static/js/3.17a886a7.chunk.js": "/charlybihel_12_05102021/static/js/3.17a886a7.chunk.js",
-    "static/js/3.17a886a7.chunk.js.map": "/charlybihel_12_05102021/static/js/3.17a886a7.chunk.js.map",
+    "main.css": "/charlybihel_12_05102021/static/css/main.3f11ed1c.chunk.css",
+    "main.js": "/charlybihel_12_05102021/static/js/main.eeb15304.chunk.js",
+    "main.js.map": "/charlybihel_12_05102021/static/js/main.eeb15304.chunk.js.map",
+    "runtime-main.js": "/charlybihel_12_05102021/static/js/runtime-main.522d0141.js",
+    "runtime-main.js.map": "/charlybihel_12_05102021/static/js/runtime-main.522d0141.js.map",
+    "static/js/2.7ffd30ea.chunk.js": "/charlybihel_12_05102021/static/js/2.7ffd30ea.chunk.js",
+    "static/js/2.7ffd30ea.chunk.js.map": "/charlybihel_12_05102021/static/js/2.7ffd30ea.chunk.js.map",
+    "static/js/3.269539d8.chunk.js": "/charlybihel_12_05102021/static/js/3.269539d8.chunk.js",
+    "static/js/3.269539d8.chunk.js.map": "/charlybihel_12_05102021/static/js/3.269539d8.chunk.js.map",
     "index.html": "/charlybihel_12_05102021/index.html",
-    "static/css/main.c7f73864.chunk.css.map": "/charlybihel_12_05102021/static/css/main.c7f73864.chunk.css.map",
-    "static/js/2.7c20b9f0.chunk.js.LICENSE.txt": "/charlybihel_12_05102021/static/js/2.7c20b9f0.chunk.js.LICENSE.txt",
+    "static/css/main.3f11ed1c.chunk.css.map": "/charlybihel_12_05102021/static/css/main.3f11ed1c.chunk.css.map",
+    "static/js/2.7ffd30ea.chunk.js.LICENSE.txt": "/charlybihel_12_05102021/static/js/2.7ffd30ea.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/charlybihel_12_05102021/static/media/Roboto-Regular.a8d6ac03.ttf",
     "static/media/calories-icon.5db5a3af.svg": "/charlybihel_12_05102021/static/media/calories-icon.5db5a3af.svg",
     "static/media/carbs-icon.aa0e7466.svg": "/charlybihel_12_05102021/static/media/carbs-icon.aa0e7466.svg",
@@ -24,9 +24,9 @@
     "static/media/yoga.6c31a277.svg": "/charlybihel_12_05102021/static/media/yoga.6c31a277.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.2dd6f230.js",
-    "static/js/2.7c20b9f0.chunk.js",
-    "static/css/main.c7f73864.chunk.css",
-    "static/js/main.d99b0a98.chunk.js"
+    "static/js/runtime-main.522d0141.js",
+    "static/js/2.7ffd30ea.chunk.js",
+    "static/css/main.3f11ed1c.chunk.css",
+    "static/js/main.eeb15304.chunk.js"
   ]
 }
