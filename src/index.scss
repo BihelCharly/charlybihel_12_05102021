@@ -14,6 +14,7 @@ ul,
 ol,
 li {
   list-style: none;
+  margin: 0;
 }
 
 a {
@@ -24,9 +25,9 @@ a {
 }
 
 :root {
-  min-width: 1440px;
+  min-width: 1024px;
   max-width: 1440px;
-  min-height: 1024px;
+  min-height: 780px;
   max-height: 1024px;
   margin-left: auto;
   margin-right: auto;

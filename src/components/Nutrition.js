@@ -7,17 +7,33 @@ import logoFat from "../assets/fat-icon.svg";
 import "../styles/Nutrition.scss";
 
 export default function Nutrition() {
-  const cal = Data.USER_MAIN_DATA[0].keyData.calorieCount;
-  const prot = Data.USER_MAIN_DATA[0].keyData.proteinCount;
-  const carb = Data.USER_MAIN_DATA[0].keyData.carbohydrateCount;
-  const fat = Data.USER_MAIN_DATA[0].keyData.lipidCount;
+  const keyData = Object.entries(Data.USER_MAIN_DATA[0].keyData);
+  const newDataArray = [];
+  const newNameArray = ["Calories", "Proteines", "Glucides", "Lipides"];
+  const newLogoArray = ["", logoCal, logoProt, logoCarb, logoFat];
+
+  keyData.forEach((element, index) => {
+    const newObject = {
+      name: newNameArray[index++],
+      value: element[1],
+      logo: newLogoArray[index++],
+    };
+    newDataArray.push(newObject);
+  });
+
   return (
     <div className="nutrition-block">
-      <div className="calories">
-        <img src={logoCal} alt="Calories" title="Logo Calories" />
-        <p>{cal + "kCal"}</p>
-        <p>Calories</p>
-      </div>
+      {newDataArray.map((element) => (
+        <div className="calories">
+          <img
+            src={element.logo}
+            alt={element.name}
+            title={"Logo " + element.name}
+          />
+          <p>{element.value + "kCal"}</p>
+          <p>{element.name}</p>
+        </div>
+      ))}
     </div>
   );
 }

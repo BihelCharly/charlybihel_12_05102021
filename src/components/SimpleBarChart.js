@@ -7,7 +7,6 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ReferenceLine,
 } from "recharts";
 import Data from "../data/data";
 import "../styles/SimpleBarChart.scss";
@@ -20,66 +19,86 @@ export default function SimpleBarChart() {
       name: index + 1,
       kCal: element.calories,
       kg: element.kilogram,
-      amt: element.kilogram,
     };
     newDataArray.push(newObject);
   });
 
+  const newLegend = (entry) => {
+    const color = "#74798C";
+    return <span style={{ color }}>{entry}</span>;
+  };
+
+  const CustomTooltip = ({ active, payload }: any) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="barchart-tooltip">
+          <p className="label">{`${payload[1].value}kg`}</p>
+          <p className="label">{`${payload[0].value}kCal`}</p>
+        </div>
+      );
+    }
+    return null;
+  };
+
   return (
     <BarChart
-      width={850}
+      width={835}
       height={320}
-      barGap={-40}
-      maxBarSize={9}
+      barGap={-30}
+      barSize={9}
       data={newDataArray}
       margin={{
-        top: 0,
-        right: 0,
-        left: 0,
-        bottom: 0,
+        top: 15,
+        right: 30,
+        left: 25,
+        bottom: 35,
       }}
     >
-      <CartesianGrid strokeDasharray="2 3" vertical={false} stroke="#DEDEDE" />
+      <text x={20} y={30} fill="black" fontSize="15">
+        {"Activité quotidienne"}
+      </text>
+      <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#DEDEDE" />
       <XAxis
+        allowDataOverflow={true}
         dataKey="name"
         tickSize="0"
         tickMargin="30"
         stroke="#9B9EAC"
-        height={100}
+        scale="point"
+        padding={{ left: 17, right: 16 }}
       />
       <YAxis
+        padding={{ top: 60, bottom: 0 }}
+        axisLine={false}
         dataKey="kg"
         orientation="right"
-        tickSize="0"
-        tickMargin="30"
+        tickSize=""
+        tickMargin="25"
         stroke="#9B9EAC"
-        width={50}
+        type="number"
+        domain={["dataMin", "dataMax"]}
+        interval={0}
       />
-      <ReferenceLine y={0} stroke="#DEDEDE" />
-      <Tooltip
-        contentStyle={{
-          backgroundColor: "red",
-          borderColor: "red",
-          color: "white",
-          width: 50,
-          height: 100,
-          display: "flex",
-          flexDirection: "column",
-          flexWrap: "wrap",
-          fontSize: 9,
-        }}
-        itemStyle={{ color: "white" }}
-        labelStyle={{ display: "none" }}
-      />
+      <Tooltip content={CustomTooltip} />
       <Legend
-        width={500}
         align="right"
         verticalAlign="top"
         iconType="circle"
         iconSize={8}
+        formatter={newLegend}
       />
-      <Bar name="Poids (kg)" dataKey="kg" fill="black" height={5} />
-      <Bar name="Calories brûlées (kCal)" dataKey="kCal" fill="red" />
+      <Bar
+        name="Calories brûlées (kCal)"
+        dataKey="kCal"
+        fill="red"
+        radius={[10, 10, 0, 0]}
+      />
+      <Bar
+        name="Poids (kg)"
+        dataKey="kg"
+        fill="black"
+        radius={[10, 10, 0, 0]}
+      />
     </BarChart>
   );
 }

@@ -30,6 +30,8 @@ export default function SimpleRadarChart() {
       width={260}
       height={270}
       data={newDataArray}
+      cx="50%"
+      cy="50%"
     >
       <PolarGrid stroke="white" radialLines={false} />
       <PolarAngleAxis

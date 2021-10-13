@@ -1,20 +1,13 @@
 import * as React from "react";
-import {
-  LineChart,
-  Line,
-  Legend,
-  XAxis,
-  Tooltip,
-  ReferenceLine,
-} from "recharts";
+import { LineChart, Line, Legend, XAxis, Tooltip } from "recharts";
 import Data from "../data/data";
 import "../styles/TinyLineChart.scss";
 
 export default function TinyLineChart() {
+  let weekDays = ["L", "M", "M", "J", "V", "S", "D"];
   let newDataArray = [];
   let sessions = Data.USER_AVERAGE_SESSIONS[0].sessions;
   sessions.forEach((element, index) => {
-    let weekDays = ["L", "M", "M", "J", "V", "S", "D"];
     const newObject = {
       name: weekDays[index++],
       day: element.day,
@@ -26,8 +19,19 @@ export default function TinyLineChart() {
 
   const newLegend = () => {
     const color = "white";
-    const opacity = "70%";
+    const opacity = "60%";
     return <span style={{ color, opacity }}>Durée moyenne des sessions</span>;
+  };
+
+  const CustomTooltip = ({ active, payload, label }: any) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="linechart-tooltip">
+          <p className="label">{`${payload[0].value} mn`}</p>
+        </div>
+      );
+    }
+    return null;
   };
 
   return (
@@ -36,8 +40,16 @@ export default function TinyLineChart() {
       width={260}
       height={270}
       data={newDataArray}
+      margin={{
+        top: 50,
+        right: 20,
+        left: 20,
+        bottom: 58,
+      }}
+      interval="preserveStartEnd"
     >
       <Legend
+        height={70}
         width={200}
         align="left"
         verticalAlign="top"
@@ -45,30 +57,25 @@ export default function TinyLineChart() {
         margin="0"
         formatter={newLegend}
       />
-      <XAxis dataKey="name" stroke="white" tickSize="0" tickMargin="15" />
-      <ReferenceLine y={0} stroke="red" />
+      <XAxis
+        axisLine={false}
+        tickLine={false}
+        dataKey="name"
+        stroke="white"
+        tickMargin="50"
+        tick={{ opacity: 0.6 }}
+        allowDataOverflow={true}
+      />
       <Tooltip
         cursor={{ stroke: "red", strokeWidth: 0 }}
-        contentStyle={{
-          backgroundColor: "white",
-          borderColor: "white",
-          color: "black",
-          width: 30,
-          height: 20,
-          display: "flex",
-          flexDirection: "column",
-          flexWrap: "wrap",
-          fontSize: 8,
-        }}
-        itemStyle={{ color: "black" }}
-        labelStyle={{ display: "none" }}
+        content={CustomTooltip}
       />
       <Line
-        type="monotone"
+        type="natural"
         dataKey="sessionLength"
         stroke="white"
         dot={false}
-        strokeWidth={3}
+        strokeWidth={2}
         fill="white"
       />
     </LineChart>

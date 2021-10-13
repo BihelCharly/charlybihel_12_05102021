@@ -1,0 +1,12 @@
+.barchart-tooltip {
+  background-color: red;
+  color: white;
+  min-height: 63px;
+  max-height: 63px;
+  min-width: 40px;
+  max-width: 40px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 8px;
+}

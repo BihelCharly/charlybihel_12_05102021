@@ -18,7 +18,11 @@
 
 .charts-block {
   display: grid;
-  .recharts-wrapper:nth-child(1) {
+  & > * {
+    border-radius: 5px;
+  }
+  .recharts-wrapper:nth-child(1),
+  .recharts-responsive-container {
     grid-column: 1/8;
     grid-row: 1;
     background-color: #fbfbfb;

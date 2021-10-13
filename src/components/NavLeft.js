@@ -7,7 +7,7 @@ import logoGym from "../assets/gym.svg";
 
 export default function NavLeft() {
   return (
-    <nav className="nav-left">
+    <aside className="nav-left">
       <ul>
         <li>
           <img
@@ -48,6 +48,6 @@ export default function NavLeft() {
       <div className="copiryght">
         <p>Copiryght, SportSee 2020</p>
       </div>
-    </nav>
+    </aside>
   );
 }

@@ -1,53 +1,77 @@
 import React from "react";
-import { PieChart, Pie, Cell, Legend } from "recharts";
+import { PieChart, Pie, Cell, Legend, Label } from "recharts";
+import Data from "../data/data";
 import "../styles/CustomPie.scss";
 
-const data = [
-  { name: "Group A", value: 60 },
-  { name: "Group B", value: 40 },
-];
-const COLORS = ["red", "white"];
-
 export default function CustomPie() {
-  const newLegend = () => {
-    const color = "black";
-    return <span style={{ color }}>Score</span>;
+  let score = Data.USER_MAIN_DATA[0].todayScore * 100;
+
+  const data = [
+    { name: "Score", value: score },
+    { name: "Total", value: 100 - score },
+  ];
+  const colors = ["red", "transparent"];
+
+  const renderLegend = () => {
+    return <p className="piechart-legend">{data[0].name}</p>;
   };
+
+  function CustomLabel({ viewBox, value1, value2 }) {
+    const { cx, cy } = viewBox;
+    return (
+      <>
+        <text
+          x={cx}
+          y={cy - 5}
+          fill="black"
+          className="recharts-text recharts-label"
+          textAnchor="middle"
+          dominantBaseline="central"
+        >
+          <tspan alignmentBaseline="middle" fontSize="35px">
+            {value1}
+          </tspan>
+        </text>
+        <text
+          x={cx}
+          y={cy + 20}
+          fill="#74798C"
+          className="recharts-text recharts-label"
+          textAnchor="middle"
+          dominantBaseline="central"
+        >
+          <tspan fontSize="12.3px">{value2}</tspan>
+        </text>
+      </>
+    );
+  }
+
   return (
     <PieChart width={260} height={270}>
-      <text
-        x={100}
-        y={120}
-        dy={10}
-        textAnchor="middle"
-        fill="black"
-        fontSize="10"
-      >
-        {data[0].name + "% </br> de votre objectif"}
-      </text>
-      <Legend
-        width={130}
-        align="left"
-        verticalAlign="top"
-        iconSize="0"
-        margin="0"
-        formatter={newLegend}
-      />
+      <Legend align="left" verticalAlign="top" content={renderLegend} />
       <Pie
         data={data}
-        cx={105}
-        cy={105}
+        cx="50%"
+        cy="40%"
         innerRadius={90}
         outerRadius={105}
         startAngle={90}
         endAngle={450}
-        fill="#8884d8"
         paddingAngle={0}
         dataKey="value"
         label={false}
       >
+        <Label
+          position="center"
+          content={
+            <CustomLabel
+              value1={data[0].value + "%"}
+              value2="de votre objectif"
+            />
+          }
+        ></Label>
         {data.map((entry, index) => (
-          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+          <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
         ))}
       </Pie>
     </PieChart>

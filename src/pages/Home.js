@@ -9,7 +9,7 @@ import "../styles/Home.scss";
 
 export default function Home() {
   return (
-    <div className="dashboard">
+    <main className="dashboard">
       <div className="welcome-block">
         <p className="welcome-user">
           Bonjour{" "}
@@ -28,6 +28,6 @@ export default function Home() {
         <CustomPie />
         <Nutrition />
       </div>
-    </div>
+    </main>
   );
 }
