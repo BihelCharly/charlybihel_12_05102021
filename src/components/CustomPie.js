@@ -4,16 +4,21 @@ import Data from "../data/data";
 import "../styles/CustomPie.scss";
 
 export default function CustomPie() {
-  let score = Data.USER_MAIN_DATA[0].todayScore * 100;
+  const score = Data.USER_MAIN_DATA[0].todayScore * 100;
+  const total = 100 - score;
 
   const data = [
     { name: "Score", value: score },
-    { name: "Total", value: 100 - score },
+    { name: "Total", value: total },
   ];
-  const colors = ["red", "transparent"];
+  const colors = ["red", "#FBFBFB"];
 
   const renderLegend = () => {
-    return <p className="piechart-legend">{data[0].name}</p>;
+    return (
+      <p className="piechart-legend" style={{ paddingLeft: `8%` }}>
+        {data[0].name}
+      </p>
+    );
   };
 
   function CustomLabel({ viewBox, value1, value2 }) {
@@ -47,19 +52,22 @@ export default function CustomPie() {
   }
 
   return (
-    <PieChart width={260} height={270}>
+    <PieChart width={270} height={270}>
       <Legend align="left" verticalAlign="top" content={renderLegend} />
+      <circle cx="50%" cy="51.6%" fill="white" r="33%"></circle>
       <Pie
         data={data}
+        dataKey="value"
         cx="50%"
         cy="40%"
-        innerRadius={90}
-        outerRadius={105}
+        label={false}
+        cornerRadius={50}
+        innerRadius={89}
+        outerRadius={100}
         startAngle={90}
         endAngle={450}
         paddingAngle={0}
-        dataKey="value"
-        label={false}
+        stroke=""
       >
         <Label
           position="center"

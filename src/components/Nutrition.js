@@ -23,8 +23,8 @@ export default function Nutrition() {
 
   return (
     <div className="nutrition-block">
-      {newDataArray.map((element) => (
-        <div className="calories">
+      {newDataArray.map((element, index) => (
+        <article className="nutrition-article" key={index}>
           <img
             src={element.logo}
             alt={element.name}
@@ -32,7 +32,7 @@ export default function Nutrition() {
           />
           <p>{element.value + "kCal"}</p>
           <p>{element.name}</p>
-        </div>
+        </article>
       ))}
     </div>
   );

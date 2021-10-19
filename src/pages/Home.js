@@ -21,13 +21,15 @@ export default function Home() {
           Félicitation ! Vous avez explosé vos objectifs hier 👏
         </p>
       </div>
-      <div className="charts-block">
+      <section className="charts-block">
         <SimpleBarChart />
-        <TinyLineChart />
-        <SimpleRadarChart />
-        <CustomPie />
+        <div className="cards-block">
+          <TinyLineChart />
+          <SimpleRadarChart />
+          <CustomPie />
+        </div>
         <Nutrition />
-      </div>
+      </section>
     </main>
   );
 }

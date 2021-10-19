@@ -17,11 +17,22 @@ li {
   margin: 0;
 }
 
+svg {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
 a {
   text-decoration: none;
   &:visited {
     color: inherit;
   }
+}
+
+#root {
+  display: grid;
+  grid-template-columns: 8% 92%;
+  grid-template-rows: 90px auto;
 }
 
 :root {

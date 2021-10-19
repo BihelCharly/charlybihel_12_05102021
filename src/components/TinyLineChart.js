@@ -12,7 +12,6 @@ export default function TinyLineChart() {
       name: weekDays[index++],
       day: element.day,
       sessionLength: element.sessionLength,
-      amt: element.sessionLength,
     };
     newDataArray.push(newObject);
   });
@@ -37,24 +36,22 @@ export default function TinyLineChart() {
   return (
     <LineChart
       className="sessions-length"
-      width={260}
+      width={270}
       height={270}
       data={newDataArray}
       margin={{
-        top: 50,
-        right: 20,
-        left: 20,
-        bottom: 58,
+        top: 40,
+        right: 15,
+        left: 15,
+        bottom: 60,
       }}
       interval="preserveStartEnd"
     >
       <Legend
-        height={70}
-        width={200}
+        width="70%"
         align="left"
         verticalAlign="top"
         iconSize="0"
-        margin="0"
         formatter={newLegend}
       />
       <XAxis
@@ -62,22 +59,26 @@ export default function TinyLineChart() {
         tickLine={false}
         dataKey="name"
         stroke="white"
-        tickMargin="50"
+        tickMargin="45"
         tick={{ opacity: 0.6 }}
-        allowDataOverflow={true}
       />
-      <Tooltip
-        cursor={{ stroke: "red", strokeWidth: 0 }}
-        content={CustomTooltip}
-      />
+      <Tooltip cursor={{ strokeWidth: 0 }} content={CustomTooltip} />
       <Line
         type="natural"
         dataKey="sessionLength"
-        stroke="white"
         dot={false}
         strokeWidth={2}
-        fill="white"
+        stroke="url(#gradient)"
       />
+      <defs>
+        <linearGradient id="gradient">
+          <stop offset="10%" stopColor="white" stopOpacity="0.4" />
+          <stop offset="30%" stopColor="white" stopOpacity="0.5" />
+          <stop offset="60%" stopColor="white" stopOpacity="0.7" />
+          <stop offset="80%" stopColor="white" stopOpacity="0.9" />
+          <stop offset="100%" stopColor="white" stopOpacity="1" />
+        </linearGradient>
+      </defs>
     </LineChart>
   );
 }

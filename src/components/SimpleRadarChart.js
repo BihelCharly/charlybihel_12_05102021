@@ -27,7 +27,7 @@ export default function SimpleRadarChart() {
     <RadarChart
       className="sessions-performances"
       outerRadius={85}
-      width={260}
+      width={270}
       height={270}
       data={newDataArray}
       cx="50%"

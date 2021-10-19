@@ -6,7 +6,7 @@
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
     "@types/typescript": "^2.0.0",
     "gh-pages": "^3.2.3",
     "react": "^17.0.2",
@@ -14,8 +14,8 @@
     "react-router": "^5.2.1",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
-    "recharts": "^2.1.4",
-    "sass": "^1.42.1",
+    "recharts": "^2.1.5",
+    "sass": "^1.43.2",
     "typescript": "^4.4.4",
     "web-vitals": "^2.1.2"
   },
