@@ -32,3 +32,18 @@
     }
   }
 }
+
+@media screen and (max-width: 1280px) {
+  .nutrition-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    width: auto;
+    margin-top: 25px;
+    .nutrition-article {
+      height: 80%;
+      width: 24%;
+    }
+  }
+}

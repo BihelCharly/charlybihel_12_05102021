@@ -1,5 +1,12 @@
 import React from "react";
-import { PieChart, Pie, Cell, Legend, Label } from "recharts";
+import {
+  ResponsiveContainer,
+  PieChart,
+  Pie,
+  Cell,
+  Legend,
+  Label,
+} from "recharts";
 import Data from "../data/data";
 import "../styles/CustomPie.scss";
 
@@ -15,7 +22,7 @@ export default function CustomPie() {
 
   const renderLegend = () => {
     return (
-      <p className="piechart-legend" style={{ paddingLeft: `8%` }}>
+      <p className="piechart-legend" style={{ paddingLeft: `7%` }}>
         {data[0].name}
       </p>
     );
@@ -52,36 +59,38 @@ export default function CustomPie() {
   }
 
   return (
-    <PieChart width={270} height={270}>
-      <Legend align="left" verticalAlign="top" content={renderLegend} />
-      <circle cx="50%" cy="51.6%" fill="white" r="33%"></circle>
-      <Pie
-        data={data}
-        dataKey="value"
-        cx="50%"
-        cy="40%"
-        label={false}
-        cornerRadius={50}
-        innerRadius={89}
-        outerRadius={100}
-        startAngle={90}
-        endAngle={450}
-        paddingAngle={0}
-        stroke=""
-      >
-        <Label
-          position="center"
-          content={
-            <CustomLabel
-              value1={data[0].value + "%"}
-              value2="de votre objectif"
-            />
-          }
-        ></Label>
-        {data.map((entry, index) => (
-          <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
-        ))}
-      </Pie>
-    </PieChart>
+    <ResponsiveContainer width="33%" height="100%">
+      <PieChart>
+        <Legend align="left" verticalAlign="top" content={renderLegend} />
+        <circle cx="50%" cy="51.6%" fill="white" r="33%"></circle>
+        <Pie
+          data={data}
+          dataKey="value"
+          cx="50%"
+          cy="40%"
+          label={false}
+          cornerRadius={50}
+          innerRadius={89}
+          outerRadius={100}
+          startAngle={90}
+          endAngle={450}
+          paddingAngle={0}
+          stroke=""
+        >
+          <Label
+            position="center"
+            content={
+              <CustomLabel
+                value1={data[0].value + "%"}
+                value2="de votre objectif"
+              />
+            }
+          ></Label>
+          {data.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
+          ))}
+        </Pie>
+      </PieChart>
+    </ResponsiveContainer>
   );
 }

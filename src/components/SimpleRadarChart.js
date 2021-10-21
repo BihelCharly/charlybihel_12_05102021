@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  ResponsiveContainer,
   Radar,
   RadarChart,
   PolarGrid,
@@ -24,24 +25,24 @@ export default function SimpleRadarChart() {
   });
 
   return (
-    <RadarChart
-      className="sessions-performances"
-      outerRadius={85}
-      width={270}
-      height={270}
-      data={newDataArray}
-      cx="50%"
-      cy="50%"
-    >
-      <PolarGrid stroke="white" radialLines={false} />
-      <PolarAngleAxis
-        dataKey="activity"
-        stroke="white"
-        fontSize="10"
-        tickLine={false}
-      />
-      <PolarRadiusAxis tick={false} axisLine={false} />
-      <Radar dataKey="kind" stroke="red" fill="red" fillOpacity={0.65} />
-    </RadarChart>
+    <ResponsiveContainer width="33%" height="100%">
+      <RadarChart
+        className="sessions-performances"
+        outerRadius={85}
+        data={newDataArray}
+        cx="50%"
+        cy="50%"
+      >
+        <PolarGrid stroke="white" radialLines={false} />
+        <PolarAngleAxis
+          dataKey="activity"
+          stroke="white"
+          fontSize="10"
+          tickLine={false}
+        />
+        <PolarRadiusAxis tick={false} axisLine={false} />
+        <Radar dataKey="kind" stroke="red" fill="red" fillOpacity={0.65} />
+      </RadarChart>
+    </ResponsiveContainer>
   );
 }
