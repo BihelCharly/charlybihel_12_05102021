@@ -70,8 +70,8 @@ export default function CustomPie() {
           cy="40%"
           label={false}
           cornerRadius={50}
-          innerRadius={89}
-          outerRadius={100}
+          innerRadius={88}
+          outerRadius={97}
           startAngle={90}
           endAngle={450}
           paddingAngle={0}

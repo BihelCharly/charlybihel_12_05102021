@@ -18,30 +18,57 @@ export default function SimpleBarChart() {
   sessions.forEach((element, index) => {
     const newObject = {
       name: index + 1,
-      kg: element.kilogram * 3,
-      kCal: element.calories,
+      kg: element.kilogram,
+      kCal: element.calories / 2,
     };
     newDataArray.push(newObject);
   });
-
   const newLegend = (entry) => {
     const color = "#74798C";
-    return <span style={{ color }}>{entry}</span>;
+    return (
+      <span x="5%" y="10%" style={{ color }}>
+        {entry}
+      </span>
+    );
   };
 
   const CustomTooltip = ({ active, payload }: any) => {
     if (active && payload && payload.length) {
       return (
         <div className="barchart-tooltip" style={{ paddingLeft: `8%` }}>
-          <p className="label">{`${payload[1].value}kg`}</p>
-          <p className="label">{`${payload[0].value}kCal`}</p>
+          <p className="label">{`${payload[0].value}kg`}</p>
+          <p className="label">{`${payload[1].value}kCal`}</p>
         </div>
       );
     }
     return null;
   };
-
-  const customYaxis = (value) => `${"test"}%`;
+  const renderLegend = (props) => {
+    const { payload } = props;
+    const color = "#74798C";
+    const colors = ["black", "red"];
+    return (
+      <div className="bar-legend">
+        <svg width="auto" height="50px">
+          <text x="auto" y="13">
+            Activité quotidienne
+          </text>
+        </svg>
+        <ul className="bar-legend">
+          {payload.map((entry, index) => (
+            <>
+              {/* <svg>
+                <circle cx="35" cy="15" r="4"></circle>
+              </svg> */}
+              <li style={{ color }} key={`item-${index}`}>
+                {entry.value}
+              </li>
+            </>
+          ))}
+        </ul>
+      </div>
+    );
+  };
 
   return (
     <ResponsiveContainer width="100%" height="90%">
@@ -55,9 +82,6 @@ export default function SimpleBarChart() {
           bottom: 45,
         }}
       >
-        <text x="5%" y="10%" fill="black" fontSize="15">
-          {"Activité quotidienne"}
-        </text>
         <CartesianGrid
           vertical={false}
           stroke="#DEDEDE"
@@ -69,7 +93,7 @@ export default function SimpleBarChart() {
           tickSize="0"
           tickMargin="30"
           stroke="#9B9EAC"
-          padding={{ left: -44, right: -44 }}
+          padding={{ left: -40, right: -40 }}
         />
         <YAxis
           axisLine={false}
@@ -78,17 +102,20 @@ export default function SimpleBarChart() {
           tickMargin="50"
           stroke="#9B9EAC"
           orientation="right"
-          domain={["dataMin - 100", "dataMax "]}
-          padding={{ top: 30, bottom: 0 }}
-          tickFormatter={customYaxis}
+          domain={["dataMin", "dataMax-50"]}
+          padding={{ top: 20, bottom: 0 }}
+          type="number"
+          ticks={[60, 80, 90]}
+          interval={0}
         />
         <Tooltip content={CustomTooltip} isAnimationActive={true} />
         <Legend
-          align="right"
           verticalAlign="top"
+          wrapperStyle={{ top: "25px", width: "85%" }}
+          layout="horizontal"
+          iconSize="50"
           iconType="circle"
-          iconSize={7}
-          formatter={newLegend}
+          content={renderLegend}
         />
         <Bar
           name="Poids (kg)"

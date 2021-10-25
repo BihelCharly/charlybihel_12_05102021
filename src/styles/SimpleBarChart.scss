@@ -11,3 +11,16 @@
   font-size: 10px;
   font-weight: 800;
 }
+
+.bar-legend {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 13px;
+  svg {
+    width: 55%;
+  }
+  ul {
+    width: 45%;
+  }
+}

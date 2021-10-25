@@ -4,9 +4,11 @@ import {
   LineChart,
   Line,
   Legend,
+  YAxis,
   XAxis,
   Tooltip,
 } from "recharts";
+import { Rectangle } from "recharts/lib/shape/Rectangle";
 import Data from "../data/data";
 import "../styles/TinyLineChart.scss";
 
@@ -28,8 +30,21 @@ export default function TinyLineChart() {
     const opacity = "60%";
     return <span style={{ color, opacity }}>Durée moyenne des sessions</span>;
   };
+  const CustomizedCursor = (props) => {
+    const { x, y, width, height } = props;
+    return (
+      <Rectangle
+        fill="black"
+        opacity="0.6"
+        x={x}
+        y={y}
+        width={width}
+        height={height}
+      />
+    );
+  };
 
-  const CustomTooltip = ({ active, payload, label }: any) => {
+  const CustomTooltip = ({ active, payload }: any) => {
     if (active && payload && payload.length) {
       return (
         <div className="linechart-tooltip">
@@ -59,7 +74,9 @@ export default function TinyLineChart() {
           verticalAlign="top"
           iconSize="0"
           formatter={newLegend}
+          wrapperStyle={{ top: "10%", left: "10%" }}
         />
+        <YAxis padding={{ top: 30, bottom: 0 }} hide={true}></YAxis>
         <XAxis
           axisLine={false}
           tickLine={false}
@@ -67,8 +84,10 @@ export default function TinyLineChart() {
           stroke="white"
           tickMargin="45"
           tick={{ opacity: 0.6 }}
+          padding={{ left: -2, right: -2 }}
+          allowDataOverflowBoolean={true}
         />
-        <Tooltip cursor={{ strokeWidth: 0 }} content={CustomTooltip} />
+        <Tooltip cursor={<CustomizedCursor />} content={CustomTooltip} />
         <Line
           type="natural"
           dataKey="sessionLength"
