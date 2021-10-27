@@ -44,6 +44,15 @@
     .nutrition-article {
       height: 80%;
       width: 24%;
+      img {
+        width: 45%;
+      }
+      :nth-child(2) {
+        font-size: 15px;
+      }
+      :nth-child(3) {
+        font-size: 11px;
+      }
     }
   }
 }
