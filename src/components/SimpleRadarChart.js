@@ -9,6 +9,7 @@ import {
 } from "recharts";
 import "../styles/SimpleRadarChart.scss";
 
+// Documentation i used to customize the following component can be found juste right here https://recharts.org/en-US/api/RadarChart
 export default function SimpleRadarChart(props) {
   let newDataArray = [];
   let performances = props.performance.data;

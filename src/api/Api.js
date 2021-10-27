@@ -3,6 +3,8 @@ import axios from "axios";
 
 // Here is the url for the API location, mine was set on localhost:3000
 axios.defaults.baseURL = "http://localhost:3000";
+// You may encounter issues with the localhost property, if you do have, then add your IP example :
+// axios.defaults.baseURL = "http://{addYourIpHere}:{yourLocalHostPort]"
 
 // This custom hook is for Home.js component to get datas from the API
 export const useAxios = (axiosParams) => {
@@ -16,8 +18,8 @@ export const useAxios = (axiosParams) => {
   const fetchData = async (params) => {
     try {
       // get & set User Infos Datas
-      const result = await axios.request(params);
-      setUserInfos(result.data.data);
+      const urlUser = await axios.request(params);
+      setUserInfos(urlUser.data.data);
       // get & set User Activity Datas
       const urlActivity = params.url + "/activity";
       const userActivity = await axios.request(urlActivity);

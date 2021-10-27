@@ -10,6 +10,7 @@ import {
 } from "recharts";
 import "../styles/TinyLineChart.scss";
 
+// Documentation i used to customize the following component can be found juste right here https://recharts.org/en-US/api/https://recharts.org/en-US/api/LineChart
 export default function TinyLineChart(props) {
   let weekDays = ["L", "M", "M", "J", "V", "S", "D"];
   let newDataArray = [];

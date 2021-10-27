@@ -11,6 +11,7 @@ import {
 } from "recharts";
 import "../styles/SimpleBarChart.scss";
 
+// Documentation i used to customize the following component can be found juste right here https://recharts.org/en-US/api/BarChart
 export default function SimpleBarChart(props) {
   let newDataArray = [];
   props.activity.forEach((element, index) => {
@@ -38,10 +39,8 @@ export default function SimpleBarChart(props) {
     const color = "#74798C";
     return (
       <div className="bar-legend">
-        <svg width="auto" height="50px">
-          <text x="auto" y="13">
-            Activité quotidienne
-          </text>
+        <svg height="50px">
+          <text y="13">Activité quotidienne</text>
         </svg>
         <ul className="bar-legend">
           {payload.map((entry, index) => (

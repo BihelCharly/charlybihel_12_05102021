@@ -7,7 +7,7 @@ Sportsee is a part of OpenClassrooms "Front End Developer" process. For this pro
 **Useful Links:**
 
 - 📁 [Repository](https://github.com/BihelCharly/charlybihel_12_05102021)
-- 📑 [Documentation](https://openclassrooms.com/fr/courses/7008001-debutez-avec-react/7135204-prenez-en-main-create-react-app)
+- 📑 [Documentation](https://openclassrooms.com/fr/paths/314/projects/812/assignment)
 - 🖼️ [Mock-up](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?node-id=0%3A1)
 
 ## Installation
@@ -24,13 +24,15 @@ Project uses [Yarn](https://classic.yarnpkg.com/en/docs/) v.1.22.15 as package m
 
 #5 - Clone or Download the project [APP](https://github.com/BihelCharly/charlybihel_12_05102021)
 
-#6 - Open APP folder with your favorite IDE and go to the `api.js` file (inside src/api/api.js)
+#6 - Open APP folder with your favorite IDE and go to the `api.js` file (inside src/api/Api.js)
 
 #7 - Declare your localhost port from the API at line 5, with "axios.defaults.baseURL" (without / at the end)
 
 #8 - Open a new terminal and install all dependencies required with `yarn install`
 
 #9 - Launch the application with `yarn app` on Linux/Mac / or `yarn app-w` on Windows
+
+#10 - If you want to change datas between user 12 & user 18, then just click into one of the header elements (Accueil, Profil, Réglage, Communauté) and select your user
 
 ## Disclaimer
 

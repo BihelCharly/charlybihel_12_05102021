@@ -10,7 +10,7 @@ import logo from "../assets/logo.png";
 import "../styles/Home.scss";
 
 export default function Home() {
-  // Getting id in url then send it to Api.js to fetch datas trough childrens components
+  // Getting ID in url then send it to Api.js to fetch datas trough childrens components
   const url = useLocation().pathname.toString();
   const { loading, error, user, activity, sessions, performance } = useAxios({
     method: "GET",
@@ -34,7 +34,7 @@ export default function Home() {
       </main>
     );
   } else if (error) {
-    // If api returning error then redirect
+    // If api returning error then redirect to
     return <Redirect to="/error" />;
   } else {
     // If not then display childrens components and them the props from the API
@@ -50,10 +50,14 @@ export default function Home() {
           </p>
         </div>
         <section className="charts-block">
+          {/* Recharts graph doc : https://recharts.org/en-US/examples/TinyLineChart */}
           <SimpleBarChart activity={activity.data.sessions} />
           <div className="cards-block">
+            {/* Recharts graph doc : https://recharts.org/en-US/examples/SimpleBarChart */}
             <TinyLineChart sessions={sessions.data} />
+            {/* Recharts graph doc : https://recharts.org/en-US/examples/SimpleRadarChart */}
             <SimpleRadarChart performance={performance.data} />
+            {/* Recharts graph doc : https://recharts.org/en-US/examples/CustomActiveShapePieChart */}
             <CustomPie score={user.todayScore ? user.todayScore : user.score} />
           </div>
           <Nutrition keyData={user.keyData} />

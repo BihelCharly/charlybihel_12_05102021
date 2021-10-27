@@ -9,6 +9,7 @@ import {
 } from "recharts";
 import "../styles/CustomPie.scss";
 
+// Documentation i used to customize the following component can be found juste right here https://recharts.org/en-US/api/PieChart
 export default function CustomPie(props) {
   const score = props.score * 100;
   const total = 100 - score;
