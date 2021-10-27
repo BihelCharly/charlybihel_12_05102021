@@ -9,13 +9,11 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
-import Data from "../data/data";
 import "../styles/SimpleBarChart.scss";
 
-export default function SimpleBarChart() {
+export default function SimpleBarChart(props) {
   let newDataArray = [];
-  let sessions = Data.USER_ACTIVITY[0].sessions;
-  sessions.forEach((element, index) => {
+  props.activity.forEach((element, index) => {
     const newObject = {
       name: index + 1,
       kg: element.kilogram,
@@ -23,14 +21,6 @@ export default function SimpleBarChart() {
     };
     newDataArray.push(newObject);
   });
-  const newLegend = (entry) => {
-    const color = "#74798C";
-    return (
-      <span x="5%" y="10%" style={{ color }}>
-        {entry}
-      </span>
-    );
-  };
 
   const CustomTooltip = ({ active, payload }: any) => {
     if (active && payload && payload.length) {
@@ -46,7 +36,6 @@ export default function SimpleBarChart() {
   const renderLegend = (props) => {
     const { payload } = props;
     const color = "#74798C";
-    const colors = ["black", "red"];
     return (
       <div className="bar-legend">
         <svg width="auto" height="50px">
@@ -56,14 +45,9 @@ export default function SimpleBarChart() {
         </svg>
         <ul className="bar-legend">
           {payload.map((entry, index) => (
-            <>
-              {/* <svg>
-                <circle cx="35" cy="15" r="4"></circle>
-              </svg> */}
-              <li style={{ color }} key={`item-${index}`}>
-                {entry.value}
-              </li>
-            </>
+            <li style={{ color }} key={`${index++}`}>
+              {entry.value}
+            </li>
           ))}
         </ul>
       </div>

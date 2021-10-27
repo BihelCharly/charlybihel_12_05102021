@@ -7,13 +7,12 @@ import {
   PolarAngleAxis,
   PolarRadiusAxis,
 } from "recharts";
-import Data from "../data/data";
 import "../styles/SimpleRadarChart.scss";
 
-export default function SimpleRadarChart() {
+export default function SimpleRadarChart(props) {
   let newDataArray = [];
-  let performances = Data.USER_PERFORMANCE[0].data;
-  let kind = Data.USER_PERFORMANCE[0].kind;
+  let performances = props.performance.data;
+  let kind = props.performance.kind;
   performances.forEach((element, index) => {
     let activities = Object.values(kind);
     const newObject = {

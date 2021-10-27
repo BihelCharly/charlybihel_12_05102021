@@ -13,7 +13,7 @@ const Root = () => (
     <Header />
     <NavLeft />
     <Switch>
-      <Route exact={true} path="/" component={Home} />
+      <Route exact={true} path="/user/*" component={Home} />
       <Route path="*" component={Error404} />
       <Route component={Error404} />
     </Switch>

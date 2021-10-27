@@ -1,13 +1,12 @@
 import React from "react";
-import Data from "../data/data";
 import logoCal from "../assets/calories-icon.svg";
 import logoProt from "../assets/protein-icon.svg";
 import logoCarb from "../assets/carbs-icon.svg";
 import logoFat from "../assets/fat-icon.svg";
 import "../styles/Nutrition.scss";
 
-export default function Nutrition() {
-  const keyData = Object.entries(Data.USER_MAIN_DATA[0].keyData);
+export default function Nutrition(props) {
+  const keyData = Object.entries(props.keyData);
   const newDataArray = [];
   const newNameArray = ["Calories", "Proteines", "Glucides", "Lipides"];
   const newLogoArray = ["", logoCal, logoProt, logoCarb, logoFat];

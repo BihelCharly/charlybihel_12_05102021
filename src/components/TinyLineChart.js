@@ -8,15 +8,12 @@ import {
   XAxis,
   Tooltip,
 } from "recharts";
-import { Rectangle } from "recharts/lib/shape/Rectangle";
-import Data from "../data/data";
 import "../styles/TinyLineChart.scss";
 
-export default function TinyLineChart() {
+export default function TinyLineChart(props) {
   let weekDays = ["L", "M", "M", "J", "V", "S", "D"];
   let newDataArray = [];
-  let sessions = Data.USER_AVERAGE_SESSIONS[0].sessions;
-  sessions.forEach((element, index) => {
+  props.sessions.sessions.forEach((element, index) => {
     const newObject = {
       name: weekDays[index++],
       day: element.day,
@@ -29,19 +26,6 @@ export default function TinyLineChart() {
     const color = "white";
     const opacity = "60%";
     return <span style={{ color, opacity }}>Durée moyenne des sessions</span>;
-  };
-  const CustomizedCursor = (props) => {
-    const { x, y, width, height } = props;
-    return (
-      <Rectangle
-        fill="black"
-        opacity="0.6"
-        x={x}
-        y={y}
-        width={width}
-        height={height}
-      />
-    );
   };
 
   const CustomTooltip = ({ active, payload }: any) => {
@@ -87,7 +71,7 @@ export default function TinyLineChart() {
           padding={{ left: -2, right: -2 }}
           allowDataOverflowBoolean={true}
         />
-        <Tooltip cursor={<CustomizedCursor />} content={CustomTooltip} />
+        <Tooltip cursor={{ stroke: "0" }} content={CustomTooltip} />
         <Line
           type="natural"
           dataKey="sessionLength"

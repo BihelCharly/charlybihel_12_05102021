@@ -2,7 +2,7 @@
 
 Sportsee is a web application to monitoringto monito your physicals performances.
 
-Sportsee is a part of OpenClassrooms "Front End Developer" process. In this project I used [React](https://reactjs.org/) + [Recharts](https://recharts.org/en-US/).
+Sportsee is a part of OpenClassrooms "Front End Developer" process. For this project I used [React](https://reactjs.org/) + [Recharts](https://recharts.org/en-US/) + [SASS](https://sass-lang.com/documentation).
 
 **Useful Links:**
 
@@ -12,17 +12,25 @@ Sportsee is a part of OpenClassrooms "Front End Developer" process. In this proj
 
 ## Installation
 
-Project uses [Yarn](https://classic.yarnpkg.com/en/docs/) as package manager and [NodeJs](https://nodejs.org/en/). Use [ncu](https://yarnpkg.com/package/npm-check-updates) command to check available(s) update(s) for the packages and follow the instructions. Project also uses [SASS](https://sass-lang.com/documentation) to compile CSS sheets.
+Project uses [Yarn](https://classic.yarnpkg.com/en/docs/) v.1.22.15 as package manager and [NodeJs](https://nodejs.org/en/) v.7.4.1 .
 
-#1 - Install [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable)
+#1 - Install [NodeJs](https://nodejs.org/en/download/)
 
-#2 - Clone or Download the project then open the folder with your favorite IDE
+#2 - Install [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable)
 
-#3 - Install all dependencies with `yarn install` command in terminal
+#3 - Clone or Download the backend [API](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)
 
-#4 - Launch the front-end application with `yarn app` command
+#4 - Open [API] folder then install all dependencies required with `yarn install` then launch it with `yarn dev`
 
-#5 - Launch the back-end api with `yarn api` command
+#5 - Clone or Download the project [APP](https://github.com/BihelCharly/charlybihel_12_05102021)
+
+#6 - Open [APP] folder with your favorite [IDE] and go to the `api.js` file (inside src/api/api.js)
+
+#7 - Declare your localhost port from the [API] at line 5, with "axios.defaults.baseURL" (without / at the end)
+
+#8 - Open a new terminal and install all dependencies required with `yarn install`
+
+#9 - Launch the application with `yarn app` on Linux/Mac / or `yarn app-w` on Windows
 
 ## Disclaimer
 

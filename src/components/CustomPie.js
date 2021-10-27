@@ -7,11 +7,10 @@ import {
   Legend,
   Label,
 } from "recharts";
-import Data from "../data/data";
 import "../styles/CustomPie.scss";
 
-export default function CustomPie() {
-  const score = Data.USER_MAIN_DATA[0].todayScore * 100;
+export default function CustomPie(props) {
+  const score = props.score * 100;
   const total = 100 - score;
 
   const data = [
