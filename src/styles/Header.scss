@@ -8,7 +8,6 @@ header {
   align-items: center;
   justify-content: space-between;
   background-color: black;
-  color: white;
   font-weight: 500;
   font-size: 24px;
   z-index: 1;
@@ -25,6 +24,11 @@ header {
       justify-content: space-around;
       li {
         cursor: pointer;
+        color: white !important;
+      }
+      a:visited {
+        color: white !important;
+        text-decoration: none;
       }
     }
   }

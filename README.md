@@ -1,6 +1,6 @@
 # Project 12 - SportSee
 
-Sportsee is a web application to monitoringto monito your physicals performances.
+Sportsee is a web application to monitoring your physicals performances.
 
 Sportsee is a part of OpenClassrooms "Front End Developer" process. For this project I used [React](https://reactjs.org/) + [Recharts](https://recharts.org/en-US/) + [SASS](https://sass-lang.com/documentation).
 
@@ -20,13 +20,13 @@ Project uses [Yarn](https://classic.yarnpkg.com/en/docs/) v.1.22.15 as package m
 
 #3 - Clone or Download the backend [API](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)
 
-#4 - Open [API] folder then install all dependencies required with `yarn install` then launch it with `yarn dev`
+#4 - Open API folder then install all dependencies required with `yarn install` then launch it with `yarn dev`
 
 #5 - Clone or Download the project [APP](https://github.com/BihelCharly/charlybihel_12_05102021)
 
-#6 - Open [APP] folder with your favorite [IDE] and go to the `api.js` file (inside src/api/api.js)
+#6 - Open APP folder with your favorite IDE and go to the `api.js` file (inside src/api/api.js)
 
-#7 - Declare your localhost port from the [API] at line 5, with "axios.defaults.baseURL" (without / at the end)
+#7 - Declare your localhost port from the API at line 5, with "axios.defaults.baseURL" (without / at the end)
 
 #8 - Open a new terminal and install all dependencies required with `yarn install`
 

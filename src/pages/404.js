@@ -13,12 +13,14 @@ function Error404() {
           alt="SportSee"
           title="Logo de SportSee"
         />
-        <p className="notfound">Page introuvable</p>
-        <p>
-          <Link to={"/"} className="returnhome">
-            Retourner à la page d'accueil
+        <div className="link-block">
+          <Link to={"/user/12"} className="return">
+            Utilisateur #12
           </Link>
-        </p>
+          <Link to={"/user/18"} className="return">
+            Utilisateur #18
+          </Link>
+        </div>
       </div>
     </div>
   );

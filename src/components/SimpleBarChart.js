@@ -27,7 +27,7 @@ export default function SimpleBarChart(props) {
       return (
         <div className="barchart-tooltip" style={{ paddingLeft: `8%` }}>
           <p className="label">{`${payload[0].value}kg`}</p>
-          <p className="label">{`${payload[1].value}kCal`}</p>
+          <p className="label">{`${payload[1].value * 2}kCal`}</p>
         </div>
       );
     }
@@ -46,7 +46,8 @@ export default function SimpleBarChart(props) {
         <ul className="bar-legend">
           {payload.map((entry, index) => (
             <li style={{ color }} key={`${index++}`}>
-              {entry.value}
+              <span className="dot"></span>
+              <p className="legend-tag">{entry.value}</p>
             </li>
           ))}
         </ul>
@@ -81,16 +82,17 @@ export default function SimpleBarChart(props) {
         />
         <YAxis
           axisLine={false}
-          dataKey="kCal"
+          dataKey="kg"
           tickSize="0"
           tickMargin="50"
           stroke="#9B9EAC"
           orientation="right"
-          domain={["dataMin", "dataMax-50"]}
-          padding={{ top: 20, bottom: 0 }}
           type="number"
-          ticks={[60, 80, 90]}
-          interval={0}
+          interval="preserveStartEnd"
+          scale="sqrt"
+          domain={["dataMin-60", "dataMax+140"]}
+          padding={{ top: 15, bottom: -5 }}
+          tickCount={4}
         />
         <Tooltip content={CustomTooltip} isAnimationActive={true} />
         <Legend

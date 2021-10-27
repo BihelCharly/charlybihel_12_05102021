@@ -20,11 +20,16 @@
 
 .notfound {
   font-size: 58px;
-  margin-bottom: 0px;
 }
 
-.returnhome {
-  font-size: 23px !important;
-  color: red !important;
-  text-decoration: underline;
+.link-block {
+  display: flex;
+  flex-direction: row;
+  padding-top: 50px;
+  column-gap: 25px;
+  .return {
+    font-size: 23px !important;
+    color: red !important;
+    text-decoration: underline;
+  }
 }
